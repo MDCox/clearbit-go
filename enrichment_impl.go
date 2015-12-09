@@ -30,8 +30,7 @@ func (e *enrichment) Combined(email string) (*CombinedResponse, error) {
 
 	c := &CombinedResponse{}
 	if err := json.Unmarshal(body, &c); err != nil {
-		e := err.(*json.UnmarshalTypeError)
-		fmt.Println(string(body[e.Offset-50 : e.Offset+50]))
+		fmt.Println(string(body))
 		return nil, err
 	}
 
